@@ -18,6 +18,7 @@ body {
 	height: calc(100vh - 1rem);
 }
 
+/* ------------------------------------------ */
 input[type="text"] {
 	background-color: transparent;
 	border-color: transparent;
@@ -30,17 +31,62 @@ input[type="text"] {
 input[type="text"]:focus {
 	outline: none;
 }
+/* ------------------------------------------ */
 
 .output .guy {
 	display: none;
 }
 
 .output {
+	display: flex;
+	flex-direction: column;
 	background-color: var(--color-output);
 	border-radius: 1rem;
 	margin: 0 0 1rem 0;
 	padding: 1rem;
 }
+
+.output button {
+	padding: 24px calc(24px * 6);
+	margin: 1rem;
+	/* border-color: transparent; */
+	border-radius: 1rem;
+	border-color: #0a3871;
+	border-style: solid;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+.copyButton {
+	align-self: flex-end;
+}
+
+.containerButton {
+	display: flex;
+	height: 100%;
+}
+
+.textOutput {
+	height: 100%;
+	overflow: auto;
+}
+
+.defaultOutput {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.subtitleOutput {
+	font-size: medium;
+	margin: 0;
+	padding: 0;
+}
+
+.textAdviceOutput {
+	margin: 20px;
+}
+/* ------------------------------------------ */
 
 .entry {
 	margin: 1rem;
@@ -49,6 +95,7 @@ input[type="text"]:focus {
 .entry .logo {
 	margin: 0 0 2rem 1vw;
 	width: 2vw;
+	/* height: 50%; */
 }
 
 /* ------------------------------------------ */
@@ -57,7 +104,7 @@ input[type="text"]:focus {
 	height: 100%;
 	width: 100%;
 	z-index: 2;
-	height: 50%;
+	height: 100%;
 	/* border: 2px red solid; */
 	padding: 1px;
 	overflow: auto;
@@ -112,11 +159,26 @@ input[type="text"]:focus {
 	transition: all 0.5s ease;
 }
 /* ------------------------------------------- */
+.aviso {
+	color: #495057;
+	margin: 1rem 5rem;
+	font-weight: 400;
+}
+
+.aviso::before {
+	content: "!";
+	background-color: #495057;
+	padding: 0.5rem 1rem;
+	border-radius: 500px;
+	font-weight: 900;
+	color: white;
+}
+/* ------------------------------------------- */
 
 @media (min-width: 800px) {
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1440px) {
 	.container {
 		display: grid;
 		grid-template-columns: 3fr 1fr;
@@ -124,9 +186,17 @@ input[type="text"]:focus {
 		height: 100%;
 	}
 
+	/* ------------------------------------------- */
 	.output .guy {
 		display: block;
 	}
+
+	.defaultOutput {
+		display: flex;
+		width: 100%;
+		padding: 30% 0 0 0;
+	}
+	/* ------------------------------------------- */
 
 	.buttonContainer {
 		display: flex;

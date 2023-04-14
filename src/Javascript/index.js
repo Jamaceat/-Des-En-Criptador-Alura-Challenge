@@ -4,7 +4,7 @@ const textField = document.querySelector(".field")
 
 textField.addEventListener("input", (evt) => {
 	if (textField.textContent.trim() !== "") {
-		placeHolder.textContent = ""
+		placeHolder.textContent = "‎"
 	} else {
 		placeHolder.textContent = text
 	}

@@ -10,6 +10,7 @@
 		<script type="module" src="src/Javascript/index.js" defer></script>
 		<script src="src/Javascript/utils/"></script>
 		<title>Document</title>
+		<link rel="icon" href="src/images/logo.svg" />
 	</head>
 	<body>
 		<div class="container">
@@ -29,15 +30,31 @@
 						<p>Ingrese el texto aqui</p>
 					</div>
 				</div>
-				<p><span> Solo letras minúsculas y sin acentos</span></p>
+				<p class="aviso"><span> Solo letras minúsculas y sin acentos</span></p>
 				<div class="buttonContainer">
 					<button class="encriptarButton">Encriptar</button
 					><button>Desencriptar</button>
 				</div>
 			</section>
 			<section class="output">
-				<img class="guy" src="src/images/telescopeguy.svg" alt="teleScopeGuy" />
-				<button>Copy</button>
+				<div class="defaultOutput">
+					<img
+						class="guy"
+						src="src/images/telescopeguy.svg"
+						alt="teleScopeGuy"
+					/>
+					<p class="subtitleOutput">
+						<strong>ningún mensaje fue encontrado</strong>
+					</p>
+					<p class="textAdviceOutput" style="color: #495057">
+						Ingresa el texto que desees encriptar o desencriptar.
+					</p>
+				</div>
+				<p class="textOutput"></p>
+
+				<div class="containerButton">
+					<button class="copyButton">Copy</button>
+				</div>
 			</section>
 		</div>
 	</body>
