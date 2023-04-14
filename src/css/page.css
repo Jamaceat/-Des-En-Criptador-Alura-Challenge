@@ -18,6 +18,10 @@ body {
 	height: calc(100vh - 1rem);
 }
 
+button:active {
+	background-color: #495057;
+}
+
 /* ------------------------------------------ */
 input[type="text"] {
 	background-color: transparent;
@@ -44,6 +48,7 @@ input[type="text"]:focus {
 	border-radius: 1rem;
 	margin: 0 0 1rem 0;
 	padding: 1rem;
+	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
 .output button {
@@ -205,11 +210,11 @@ input[type="text"]:focus {
 
 	.buttonContainer button:not(.encriptarButton):hover {
 		padding: 24px calc(24px * 10);
-		transition: all 0.5s ease;
+		transition: padding 0.5s ease;
 	}
 
 	.encriptarButton:hover {
 		padding: 24px calc(24px * 10);
-		transition: all 0.5s ease;
+		transition: padding 0.5s ease;
 	}
 }
