@@ -185,6 +185,52 @@ input[type="text"]:focus {
 
 /* ------------------------------------------- */
 
+@media (min-width: 0) and (max-width: 799px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* --------------------------------------------------- */
+
+	/* .fieldContainer {
+		position: relative;
+		margin: 0;
+		display: flex;
+		height: 100%;
+	} */
+
+	.fieldContainer {
+		margin: 0;
+		height: 20vh;
+	}
+
+	/* --------------------------------------------------- */
+	.container .buttonContainer button {
+		width: 100%;
+		margin: 4px auto;
+		text-align: center;
+	}
+
+	/* --------------------------------------------------- */
+
+	.output {
+		margin: 1rem;
+	}
+	/* --------------------------------------------------- */
+
+	.aviso {
+		font-size: small;
+		margin: 0;
+		margin-bottom: 0.25rem;
+	}
+
+	.aviso::before {
+		content: "!";
+		padding: 0.25rem 0.5rem;
+	}
+}
+
 @media (min-width: 800px) and (max-width: 1439px) {
 	.container {
 		width: 100%;
