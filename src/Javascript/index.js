@@ -13,6 +13,17 @@ textField.addEventListener("input", (evt) => {
 // ------------------------------------------------------------------------------------------------------------------------utils
 const logica = {a: "ai", e: "enter", i: "imes", o: "ober", u: "ufat"}
 
+const mappeoInverso = (prevObject) => {
+	let initialState = {}
+
+	const newObject = Object.keys(prevObject).reduce((prev, x) => {
+		return {...prev, [prevObject[x]]: x}
+	}, initialState)
+
+	return newObject
+}
+
+const logicaDesencriptar = mappeoInverso(logica)
 // Esto ayuda a crear un regex que reemplaza el pattern por el replacer
 const regexFactory = (pattern, replacer) => {
 	const regexmaker = new RegExp(pattern, "g")
@@ -24,10 +35,10 @@ const regexFactory = (pattern, replacer) => {
 
 // ------------------------------------------------------------------------------------------------------------------------Logica encriptar
 
-let inicialEncriptador = {}
+let initialEncriptador = {}
 const encriptador = Object.keys(logica).reduce((prev, x) => {
 	return {...prev, [x]: regexFactory(x, logica[x])}
-}, inicialEncriptador)
+}, initialEncriptador)
 
 const encriptar = (texto) => {
 	const arrayText = Array.from(texto)
@@ -37,4 +48,17 @@ const encriptar = (texto) => {
 	return arrayText
 }
 
-// ------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------------Desencriptar
+
+let initialDesencriptador = {}
+
+const desencriptador = Object.keys(logicaDesencriptar).map((x) =>
+	regexFactory(x, logicaDesencriptar[x])
+)
+
+const desencriptar = (texto) => {
+	const message = desencriptador.reduce((prev, x) => x(prev), texto)
+
+	return message
+}
+console.log("desencriptar: ", desencriptar(encriptado))
