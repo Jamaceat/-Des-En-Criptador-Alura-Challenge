@@ -22,6 +22,10 @@ button:active {
 	background-color: #495057;
 }
 
+.textOutput {
+	font-size: larger;
+	color: #495057;
+}
 /* ------------------------------------------ */
 input[type="text"] {
 	background-color: transparent;
@@ -191,6 +195,14 @@ input[type="text"]:focus {
 		flex-direction: column;
 	}
 
+	.containerButton {
+		width: 100%;
+	}
+
+	.output button {
+		margin: 0;
+	}
+
 	/* --------------------------------------------------- */
 
 	/* .fieldContainer {
@@ -229,15 +241,24 @@ input[type="text"]:focus {
 		content: "!";
 		padding: 0.25rem 0.5rem;
 	}
+
+	.textOutput {
+		height: fit-content;
+		display: none;
+	}
 }
 
 @media (min-width: 800px) and (max-width: 1439px) {
 	.container {
 		width: 100%;
-		overflow: hidden;
+		overflow: auto;
 		height: 100%;
 		display: grid;
 		grid-template-rows: 3fr 1fr;
+	}
+
+	.field {
+		height: 100%;
 	}
 
 	.entry {
@@ -247,7 +268,7 @@ input[type="text"]:focus {
 
 	.fieldContainer {
 		margin: 40px;
-		height: 60%;
+		height: 40%;
 	}
 
 	.buttonContainer {
@@ -262,7 +283,10 @@ input[type="text"]:focus {
 
 	.output {
 		margin: 1rem;
-		width: 93%;
+		width: 90%;
+		box-sizing: border-box;
+		margin: 0 auto;
+		height: fit-content;
 	}
 
 	.textOutput {
@@ -281,8 +305,19 @@ input[type="text"]:focus {
 
 	.containerButton {
 		width: 100%;
+		display: flex;
+	}
+
+	.defaultOutput,
+	.textOutput {
+		height: 100%;
+	}
+	.copyButton {
+		align-self: flex-end;
 	}
 }
+
+/* ----------------------------------------------------------- */
 
 @media (min-width: 1440px) {
 	.container {
@@ -307,5 +342,14 @@ input[type="text"]:focus {
 	.buttonContainer {
 		display: flex;
 		flex-direction: row;
+	}
+
+	.textOutput {
+		height: 100%;
+		display: none;
+	}
+
+	.defaultOutput {
+		height: 100%;
 	}
 }

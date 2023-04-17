@@ -61,4 +61,39 @@ const desencriptar = (texto) => {
 
 	return message
 }
-console.log("desencriptar: ", desencriptar(encriptado))
+
+// -------------------------------
+
+const buttonEncriptar = document.querySelector("#encriptar")
+const buttonDesencriptar = document.querySelector("#desencriptar")
+const defaultOutput = document.querySelector(".defaultOutput")
+const textOutput = document.querySelector(".textOutput")
+const copyOutput = document.querySelector(".copyButton")
+
+buttonEncriptar.addEventListener("click", () => {
+	const contenido = textField.textContent
+
+	if (contenido.trim().length !== 0) {
+		defaultOutput.style.display = "none"
+		textOutput.style.display = "block"
+		const Output = encriptar(textField.textContent)
+		textOutput.textContent = Output
+	}
+})
+
+buttonDesencriptar.addEventListener("click", () => {
+	const contenido = textField.textContent
+
+	if (contenido.trim().length !== 0) {
+		defaultOutput.style.display = "none"
+		textOutput.style.display = "block"
+		const Output = desencriptar(textField.textContent)
+		textOutput.textContent = Output
+	}
+})
+
+copyOutput.addEventListener("click", () => {
+	if (textOutput.textContent || textOutput.textContent === 0) {
+		navigator.clipboard.writeText(textOutput.textContent.trim())
+	}
+})
