@@ -76,7 +76,7 @@ buttonEncriptar.addEventListener("click", () => {
 	if (contenido.trim().length !== 0) {
 		defaultOutput.style.display = "none"
 		textOutput.style.display = "block"
-		const Output = encriptar(textField.textContent)
+		const Output = encriptar(textField.textContent.toLocaleLowerCase())
 		textOutput.textContent = Output
 	}
 })
@@ -87,7 +87,7 @@ buttonDesencriptar.addEventListener("click", () => {
 	if (contenido.trim().length !== 0) {
 		defaultOutput.style.display = "none"
 		textOutput.style.display = "block"
-		const Output = desencriptar(textField.textContent)
+		const Output = desencriptar(textField.textContent.toLocaleLowerCase())
 		textOutput.textContent = Output
 	}
 })
